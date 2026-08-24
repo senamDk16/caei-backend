@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: caei_group_db
+    restart: always
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: caei_group_db
+    ports:
+      - '5432:5432'
+    volumes:
+      - caei_group_db:/var/lib/postgresql/data
+
+volumes:
+  caei_group_db:
